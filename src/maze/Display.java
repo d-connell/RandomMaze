@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Display extends Canvas {
 
-    private int blockSize = 10;
-    private Maze maze;
-    private List<Block> solution;
-    private int width;
-    private int height;
+    private final int blockSize = 10;
+    private final Maze maze;
+    private final List<Block> solution;
+    private final int width;
+    private final int height;
 
     public Display(Maze maze, List<Block> solution) {
         this.maze = maze;

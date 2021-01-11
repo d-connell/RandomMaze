@@ -6,7 +6,7 @@ public class Launcher {
 
     public static void main(String[] args) {
         Maze maze = MazeBuilder.generateMaze();
-        List<Block> fastestSolution = MazeSolver.solveMaze(maze);
+        List<Block> fastestSolution = MazeSolver.getFastestSolution(maze);
         new Display(maze, fastestSolution);
     }
 
