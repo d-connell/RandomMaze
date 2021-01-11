@@ -51,4 +51,5 @@ public class Maze {
     public void setExitPoint(Block exitPoint) {
         this.exitPoint = exitPoint;
     }
+
 }

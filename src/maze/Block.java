@@ -1,7 +1,5 @@
 package maze;
 
-import java.util.Objects;
-
 public class Block {
 
     private int horizontalPosition;
@@ -30,18 +28,4 @@ public class Block {
         this.surfaceType = surfaceType;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Block block = (Block) o;
-        return horizontalPosition == block.horizontalPosition &&
-                verticalPosition == block.verticalPosition &&
-                surfaceType == block.surfaceType;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(horizontalPosition, verticalPosition, surfaceType);
-    }
 }

@@ -103,4 +103,5 @@ public class Mouse {
     public List<Block> getPath() {
         return path;
     }
+
 }
