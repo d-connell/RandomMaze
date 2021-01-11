@@ -2,9 +2,9 @@ package maze;
 
 public class Maze {
 
-    private int blocksWide;
-    private int blocksHigh;
-    private Block[][] blocks;
+    private final int blocksWide;
+    private final int blocksHigh;
+    private final Block[][] blocks;
     private Block entryPoint;
     private Block exitPoint;
 

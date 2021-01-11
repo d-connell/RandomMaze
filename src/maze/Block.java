@@ -2,8 +2,8 @@ package maze;
 
 public class Block {
 
-    private int horizontalPosition;
-    private int verticalPosition;
+    private final int horizontalPosition;
+    private final int verticalPosition;
     private Surface surfaceType;
 
     public Block(int verticalPosition, int horizontalPosition) {

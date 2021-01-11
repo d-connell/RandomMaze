@@ -6,8 +6,8 @@ import java.util.List;
 public abstract class MazeBuilder {
 
     private static Maze maze;
-    private static int blocksWide = 50;
-    private static int blocksHigh = 50;
+    private final static int blocksWide = 50;
+    private final static int blocksHigh = 50;
     private static List<Block> exposedBlocks;
     private static List<Block> impassableBlocks;
 
@@ -38,7 +38,8 @@ public abstract class MazeBuilder {
     }
 
     private static void createEntryPoint() {
-        Block entryPoint = maze.getBlocks()[(int) (Math.random() * (blocksHigh - 3) + 1)][0]; // subtract three to ensure entry is not in a corner block
+        // Subtract three from blocksHigh to ensure the entry is not in a corner block.
+        Block entryPoint = maze.getBlocks()[(int) (Math.random() * (blocksHigh - 3) + 1)][0];
         entryPoint.setSurfaceType(Surface.PASSABLE);
         maze.setEntryPoint(entryPoint);
     }
@@ -114,7 +115,8 @@ public abstract class MazeBuilder {
     }
 
     private static void createLoops() {
-        int blocksToOpen = 10; // number fixed to prove principle without making a maze which will take a very long time to solve
+        // blocksToOpen is limited rather than random, to avoid generating mazes which will take a very long time to solve.
+        int blocksToOpen = 10;
         int blocksOpened = 0;
         while (blocksOpened < blocksToOpen && impassableBlocks.size() > 0) {
             Block activeBlock = impassableBlocks.get((int) (Math.random() * (exposedBlocks.size() - 1)));
@@ -155,7 +157,8 @@ public abstract class MazeBuilder {
 
     private static void createExitPoint() {
         while (maze.getExitPoint() == null) {
-            Block exitPoint = maze.getBlocks()[(int) (Math.random() * (blocksHigh - 3)) + 1][blocksWide - 1];  // subtract three to ensure exit is not in a corner block
+            // Subtract three from blocksHigh to ensure the exit is not in a corner block.
+            Block exitPoint = maze.getBlocks()[(int) (Math.random() * (blocksHigh - 3)) + 1][blocksWide - 1];
             if (maze.getBlocks()[exitPoint.getVerticalPosition()][exitPoint.getHorizontalPosition() - 1].getSurfaceType().equals(Surface.PASSABLE)) {
                 exitPoint.setSurfaceType(Surface.PASSABLE);
                 maze.setExitPoint(exitPoint);

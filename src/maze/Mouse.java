@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Mouse {
 
-    private Maze maze;
+    private final Maze maze;
     private int horizontalPosition;
     private int verticalPosition;
-    private List<Block> path;
+    private final List<Block> path;
 
     public Mouse(Maze maze) {
         this.maze = maze;
